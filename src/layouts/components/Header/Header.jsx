@@ -1,9 +1,14 @@
-import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faHouse, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { IoSearch, IoHeartCircle } from 'react-icons/io5';
+import { LuUserCircle2 } from 'react-icons/lu';
+import { HiUserCircle } from 'react-icons/hi2';
+import { BsFillSearchHeartFill, BsHeart } from 'react-icons/bs';
 
 function Header() {
+  const location = useLocation();
+  const { pathname } = location;
   return (
     <header className="h-desktop-header-height grid grid-cols-custom-layout mt-auto mb-auto mr-auto ml-auto fixed right-0 left-0 items-center z-1 bg-barcelona-header">
       <div className="h-[32px]">
@@ -27,9 +32,13 @@ function Header() {
           className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
           to="/home"
           role="link"
-          tabindex="0"
+          tabIndex="0"
         >
-          <FontAwesomeIcon className="w-6 h-6" icon={faHouse}></FontAwesomeIcon>
+          {pathname.includes('/home') ? (
+            <FontAwesomeIcon className="w-6 h-6" icon={faHouseChimney} />
+          ) : (
+            <FontAwesomeIcon className="w-6 h-6 opacity-60" icon={faHouse} />
+          )}
         </Link>
         <Link
           className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
@@ -37,7 +46,11 @@ function Header() {
           role="link"
           tabindex="0"
         >
-          <FontAwesomeIcon className="w-[24px] h-[24px]" icon={faSearch}></FontAwesomeIcon>
+          {pathname.includes('/search') ? (
+            <BsFillSearchHeartFill className="w-6 h-6" />
+          ) : (
+            <IoSearch className="w-6 h-6 opacity-60" />
+          )}
         </Link>
 
         <Link
@@ -46,15 +59,23 @@ function Header() {
           role="link"
           tabindex="0"
         >
-          <FontAwesomeIcon className="w-[24px] h-[24px]" icon={faHeart}></FontAwesomeIcon>
+          {pathname.includes('/activity') ? (
+            <IoHeartCircle className="w-6 h-6" />
+          ) : (
+            <BsHeart className="w-6 h-6 opacity-60" />
+          )}
         </Link>
         <Link
           className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
-          to="/home"
+          to="/user"
           role="link"
           tabindex="0"
         >
-          <FontAwesomeIcon className="w-[24px] h-[24px]" icon={faUser}></FontAwesomeIcon>
+          {pathname.includes('/user') ? (
+            <HiUserCircle className="w-6 h-6" />
+          ) : (
+            <LuUserCircle2 className="w-6 h-6 opacity-60" />
+          )}
         </Link>
       </div>
 
