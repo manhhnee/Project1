@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import { DefaultLayout } from '~/layouts';
 import { publicRoutes } from '~/routes';
 import React, { useEffect } from 'react';
@@ -19,6 +18,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
         {publicRoutes.map((route, index) => {
           const Page = route.component;
           let Layout = DefaultLayout;

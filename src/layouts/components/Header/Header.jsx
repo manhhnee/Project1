@@ -6,16 +6,27 @@ import { LuUserCircle2 } from 'react-icons/lu';
 import { HiUserCircle } from 'react-icons/hi2';
 import { BsFillSearchHeartFill, BsHeart } from 'react-icons/bs';
 
+const NavLink = ({ to, icon, activeIcon, pathname, className }) => (
+  <Link
+    className={`px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500 ${className}`}
+    to={to}
+    role="link"
+    tabIndex="0"
+  >
+    {pathname.includes(to) ? icon : activeIcon}
+  </Link>
+);
+
 function Header() {
-  const location = useLocation();
-  const { pathname } = location;
+  const { pathname } = useLocation();
+
   return (
-    <header className="h-desktop-header-height grid grid-cols-custom-layout mt-auto mb-auto mr-auto ml-auto fixed right-0 left-0 items-center z-1 bg-barcelona-header">
+    <header className="h-desktop-header-height grid grid-cols-custom-layout mt-auto mb-auto mr-auto ml-auto fixed right-0 left-0 items-center z-50 bg-barcelona-header">
       <div className="h-[32px]">
         <Link to="/home">
           <svg
             aria-label="Threads"
-            class="x1ypdohk x13dflua x11xpdln xk4oym4 xus2keu"
+            className="x1ypdohk x13dflua x11xpdln xk4oym4 xus2keu"
             fill="var(--barcelona-primary-icon)"
             height="100%"
             role="img"
@@ -27,64 +38,39 @@ function Header() {
           </svg>
         </Link>
       </div>
-      <div className="grid items-center mr-auto ml-auto grid-cols-5">
-        <Link
-          className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
+      <div className="grid items-center mr-auto ml-auto grid-cols-5 gap-4">
+        <NavLink
           to="/home"
-          role="link"
-          tabIndex="0"
-        >
-          {pathname.includes('/home') ? (
-            <FontAwesomeIcon className="w-6 h-6" icon={faHouseChimney} />
-          ) : (
-            <FontAwesomeIcon className="w-6 h-6 opacity-60" icon={faHouse} />
-          )}
-        </Link>
-        <Link
-          className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
+          icon={<FontAwesomeIcon className="w-7 h-7" icon={faHouseChimney} />}
+          activeIcon={<FontAwesomeIcon className="w-7 h-7 opacity-60" icon={faHouse} />}
+          pathname={pathname}
+        />
+        <NavLink
           to="/search"
-          role="link"
-          tabindex="0"
-        >
-          {pathname.includes('/search') ? (
-            <BsFillSearchHeartFill className="w-6 h-6" />
-          ) : (
-            <IoSearch className="w-6 h-6 opacity-60" />
-          )}
-        </Link>
-
-        <Link
-          className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
+          icon={<BsFillSearchHeartFill className="w-7 h-7" />}
+          activeIcon={<IoSearch className="w-7 h-7 opacity-60" />}
+          pathname={pathname}
+        />
+        <NavLink
           to="/activity"
-          role="link"
-          tabindex="0"
-        >
-          {pathname.includes('/activity') ? (
-            <IoHeartCircle className="w-6 h-6" />
-          ) : (
-            <BsHeart className="w-6 h-6 opacity-60" />
-          )}
-        </Link>
-        <Link
-          className="px-7 py-3 rounded-lg hover:bg-stone-300 transition-all duration-500"
+          icon={<IoHeartCircle className="w-7 h-7" />}
+          activeIcon={<BsHeart className="w-7 h-7 opacity-60" />}
+          pathname={pathname}
+        />
+        <NavLink
           to="/user"
-          role="link"
-          tabindex="0"
-        >
-          {pathname.includes('/user') ? (
-            <HiUserCircle className="w-6 h-6" />
-          ) : (
-            <LuUserCircle2 className="w-6 h-6 opacity-60" />
-          )}
-        </Link>
+          icon={<HiUserCircle className="w-7 h-7" />}
+          activeIcon={<LuUserCircle2 className="w-7 h-7 opacity-60" />}
+          pathname={pathname}
+        />
       </div>
 
-      <div class=" mx-auto">
-        <div class="relative group cursor-pointer">
-          <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-violet-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div class="relative px-4 py-3 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-            <div class="space-y-2">
-              <p class="text-slate-800">Đăng nhập</p>
+      <div className="mx-auto">
+        <div className="relative group cursor-pointer">
+          <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-violet-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div className="relative px-4 py-3 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
+            <div className="space-y-2">
+              <p className="text-slate-800">Đăng nhập</p>
             </div>
           </div>
         </div>

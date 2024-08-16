@@ -21,7 +21,22 @@ module.exports = {
         'gradient-from': '#ff4b2b',
         'gradient-to': '#ff416c',
       },
+      fontFamily: {
+        sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          'scrollbar-width': 'none' /* Firefox */,
+          '-ms-overflow-style': 'none' /* Internet Explorer and Edge */,
+        },
+        '.scrollbar-hide::-webkit-scrollbar': {
+          display: 'none' /* Safari and Chrome */,
+        },
+      });
+    },
+  ],
 };
