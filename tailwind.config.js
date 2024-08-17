@@ -10,6 +10,9 @@ module.exports = {
       height: {
         'desktop-header-height': '74px',
       },
+      width: {
+        'desktop-search-page-width': '572px',
+      },
       maxWidth: {
         'desktop-header-max-width': '1230px',
       },
@@ -20,6 +23,7 @@ module.exports = {
         'barcelona-header': 'rgba(255, 255, 255, 0.85)',
         'gradient-from': '#ff4b2b',
         'gradient-to': '#ff416c',
+        'primary-text': 'rgb(0, 0, 0)',
       },
       fontFamily: {
         sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],

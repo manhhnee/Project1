@@ -35,9 +35,7 @@ function Home() {
         {/* Container */}
         <div className="flex flex-col pt-3 max-w-[524px] pl-16">
           <div className="text-[.9375rem] mt-1">
-            <span className="font-normal text-base">
-              たんぽぽのワタ芸 外が暑すぎるのでテーブルフォト たんぽぽのワタ芸 外が暑すぎるのでテーブルフォト
-            </span>
+            <span className="font-normal text-base">たんぽぽのワタ芸 外が暑すぎるのでテーブルフォト</span>
           </div>
           <div className="mt-2 overflow-x-auto scrollbar-hide">
             <div className="grid grid-flow-col auto-cols-max gap-4">
@@ -88,9 +86,7 @@ function Home() {
         </div>
         <div className="flex flex-col pt-3 max-w-[524px] pl-16">
           <div className="text-[.9375rem] mt-1">
-            <span className="font-normal text-base">
-              たんぽぽのワタ芸 外が暑すぎるのでテーブルフォト たんぽぽのワタ芸 外が暑すぎるのでテーブルフォト
-            </span>
+            <span className="font-normal text-base">たんぽぽのワタ芸 外が暑すぎるのでテーブルフォト</span>
           </div>
           <div className="mt-2 overflow-x-auto scrollbar-hide">
             <div className="grid grid-flow-col auto-cols-max gap-4">
