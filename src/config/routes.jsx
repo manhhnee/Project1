@@ -3,7 +3,7 @@ const routes = {
   home: '/home',
   search: '/search',
   activity: '/activity',
-  user: '/user',
+  profile: '/profile',
 };
 
 export default routes;

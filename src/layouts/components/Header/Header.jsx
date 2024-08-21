@@ -1,10 +1,9 @@
 import { faHouse, faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BsHouseDoor, BsHouseDoorFill } from 'react-icons/bs';
 import { Link, useLocation } from 'react-router-dom';
-import { IoSearch, IoHeartCircle } from 'react-icons/io5';
-import { LuUserCircle2 } from 'react-icons/lu';
-import { HiUserCircle } from 'react-icons/hi2';
-import { BsFillSearchHeartFill, BsHeart } from 'react-icons/bs';
+import { BsSearch, BsFillSearchHeartFill, BsHeart, BsHeartFill } from 'react-icons/bs';
+import { IoPerson, IoPersonOutline } from 'react-icons/io5';
 
 const NavLink = ({ to, icon, activeIcon, pathname, className }) => (
   <Link
@@ -21,7 +20,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <header className="h-desktop-header-height grid grid-cols-custom-layout mt-auto mb-auto mr-auto ml-auto fixed right-0 left-0 items-center z-50 bg-barcelona-header">
+    <header className="h-desktop-header-height grid grid-cols-custom-layout mt-auto mb-auto mr-auto ml-auto fixed right-0 left-0 items-center z-50 bg-all-background">
       <div className="h-[32px]">
         <Link to="/home">
           <svg
@@ -41,26 +40,26 @@ function Header() {
       <div className="grid items-center mr-auto ml-auto grid-cols-5 gap-4">
         <NavLink
           to="/home"
-          icon={<FontAwesomeIcon className="w-7 h-7" icon={faHouseChimney} />}
-          activeIcon={<FontAwesomeIcon className="w-7 h-7 opacity-60" icon={faHouse} />}
+          icon={<BsHouseDoorFill className="w-7 h-7" />}
+          activeIcon={<BsHouseDoor className="w-7 h-7 opacity-60" />}
           pathname={pathname}
         />
         <NavLink
           to="/search"
           icon={<BsFillSearchHeartFill className="w-7 h-7" />}
-          activeIcon={<IoSearch className="w-7 h-7 opacity-60" />}
+          activeIcon={<BsSearch className="w-7 h-7 opacity-60" />}
           pathname={pathname}
         />
         <NavLink
           to="/activity"
-          icon={<IoHeartCircle className="w-7 h-7" />}
+          icon={<BsHeartFill className="w-7 h-7" />}
           activeIcon={<BsHeart className="w-7 h-7 opacity-60" />}
           pathname={pathname}
         />
         <NavLink
-          to="/user"
-          icon={<HiUserCircle className="w-7 h-7" />}
-          activeIcon={<LuUserCircle2 className="w-7 h-7 opacity-60" />}
+          to="/profile"
+          icon={<IoPerson className="w-7 h-7" />}
+          activeIcon={<IoPersonOutline className="w-7 h-7 opacity-60" />}
           pathname={pathname}
         />
       </div>

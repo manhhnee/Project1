@@ -24,6 +24,9 @@ module.exports = {
         'gradient-from': '#ff4b2b',
         'gradient-to': '#ff416c',
         'primary-text': 'rgb(0, 0, 0)',
+        'purple-1': '#7A1CAC',
+        'all-background': 'rgba(255, 255, 255, 0.7)',
+        'outline-image': 'rgba(0, 0, 0, 0.3)',
       },
       fontFamily: {
         sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
